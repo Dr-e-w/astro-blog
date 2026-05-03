@@ -1,0 +1,95 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const title = "Your Blog";
+const description = "An agentic design engineer making websites with Astro. I write about web development, design, and the intersection of creativity and technology.";
+
+const allPosts = [
+  {
+    date: "May 2, 2026",
+    title: "Design thinking in the age of AI",
+    excerpt: "How AI is changing the way we approach design problems, and why intention still matters more than ever.",
+    tags: ["design", "ai"],
+    slug: "design-thinking-ai"
+  },
+  {
+    date: "Apr 28, 2026",
+    title: "Why I switched from Webflow to Astro",
+    excerpt: "The performance gains, developer experience, and simplicity of a modern static site generator changed how I build.",
+    tags: ["astro", "web"],
+    slug: "webflow-to-astro"
+  },
+  {
+    date: "Apr 15, 2026",
+    title: "Building reusable components with intention",
+    excerpt: "A deeper look at how constraint and clarity in component design leads to better systems and faster development.",
+    tags: ["components", "systems"],
+    slug: "reusable-components"
+  },
+  {
+    date: "Mar 22, 2026",
+    title: "The 48 hour project: Rapid prototyping lessons",
+    excerpt: "What I learned building three different projects in 48 hours, and why constraints fuel creativity.",
+    tags: ["speed", "projects"],
+    slug: "48-hour-project"
+  },
+  {
+    date: "Mar 1, 2026",
+    title: "Faith and technology belong together",
+    excerpt: "Why building faith-focused apps matters, and how intentional design can serve values beyond just metrics.",
+    tags: ["faith", "technology"],
+    slug: "faith-technology"
+  }
+];
+---
+
+<BlogLayout title={title}>
+  <div class="header">
+    <div class="header-content">
+      <div class="logo">Your Name</div>
+      <div class="header-intro">{description}</div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Posts</div>
+        <ul class="sidebar-list">
+          <li><a href="/" class="active">All posts</a></li>
+          <li><a href="/#design">Web design</a></li>
+          <li><a href="/#dev">Development</a></li>
+          <li><a href="/#thoughts">Thoughts</a></li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <div class="sidebar-label">Work</div>
+        <ul class="sidebar-list">
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="posts">
+      <div class="posts-header">
+        <h1>All posts</h1>
+        <div class="posts-count">{allPosts.length} articles</div>
+      </div>
+
+      {allPosts.map((post) => (
+        <article class="post-card">
+          <div class="post-date">{post.date}</div>
+          <h2 class="post-title">{post.title}</h2>
+          <p class="post-excerpt">{post.excerpt}</p>
+          <div class="post-tags">
+            {post.tags.map((tag) => (
+              <span class="post-tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </main>
+  </div>
+</BlogLayout>

@@ -1,0 +1,19 @@
+{
+  "name": "astro-blog-decap",
+  "version": "1.0.0",
+  "description": "A beautiful blog built with Astro and Decap CMS",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.11.0",
+    "typescript": "^5.6.3"
+  }
+}
